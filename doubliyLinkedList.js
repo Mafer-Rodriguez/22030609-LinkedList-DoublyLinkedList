@@ -15,6 +15,10 @@ class DoublyLinkedList {
     }
 
     addToHead(data) {
+        if (!data) {
+            return "There is  no data";
+        }
+
         const newNode = new Node(data, this.head, null);
         if (this.head) {
             newNode.next = this.head;
@@ -28,6 +32,9 @@ class DoublyLinkedList {
     }
 
     addToTail(data) {
+        if (!data) {
+            return "There is no data";
+        }
         const newNode = new Node(data, null, this.tail);
         if (this.tail) {
             newNode.prev = this.tail; // The new node we just created will be the next node of the tail
@@ -67,7 +74,7 @@ class DoublyLinkedList {
 
     removeFromHead() {
         if (!this.head) {
-            return null;
+            return null, "There is no head";
         }
         const valueToReturn = this.head.data; // Save the value of the head
         if (this.head === this.tail) { // If the head is equal to the tail
@@ -83,7 +90,7 @@ class DoublyLinkedList {
 
     removeFromTail() {
         if (!this.tail) {
-            return null;
+            return null, "There is no tail";
         }
         const valueToReturn = this.tail.data;
         if (this.head === this.tail) {
@@ -161,6 +168,6 @@ list.insertAt(7, 2); // Insert the value 7 at position 2
 list.removeFromHead(); // Remove the value from the head
 list.removeFromTail(); // Remove the value from the tail
 list.removeData(2); // Remove the value
-console.log(list.getSize());
 console.log(list.print());
 console.log(list);
+console.log("The size of the list is: " + list.getSize());
