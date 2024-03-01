@@ -36,6 +36,30 @@ class stack {
         return this.count == 0;
     }
 
+    //Check size of stack
+    size(){
+        console.log(`${this.count} elements in stack`);//esto es para saber cuantos elementos hay en el stack
+        return this.count;
+    }
+
+    //Print elements in stack
+
+    print (){
+        let str = ''
+        for (let i =0; i < this.count; i++){
+            str += this.items[i] + ' ';//esto es para imprimir todos los elementos del stack
+        }
+        return str;
+    }
+
+    //Clear stack
+    clear(){
+        this.items = [];
+        this.count = 0;
+        console.log('stack cleared..');//esto es para saber si el stack esta vacio o no
+        return this.items;
+    }
+
 
 
 }
@@ -52,7 +76,36 @@ stack.peek();
 
 stack.push(300);
 
+console.log(myStack.print());
+
+stack.pop();
+stack.pop();
+
+stack.clear();
+
+console.log(stack.print());
+stack.size();
+
+stack.isEmpty(); // Call the isEmpty method on the stack instance
+
+stack.push(100);
+stack.push(200);
+stack.push(300);
+
+stack.peek();
+
+stack.push(300);
+
+console.log(stack.print());
+
 stack.pop()
 stack.pop()
 //console.log(stack.pop());
 //console.log(stack.pop());
+
+stack.clear();
+
+console.log(stack.print());
+stack.size();
+
+//stack.isEmpty();
