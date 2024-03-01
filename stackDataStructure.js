@@ -1,5 +1,5 @@
 // Recuerda, en una pila el último en entrar es el primero en salir (LIFO)
-class stack {
+class Stack {
     constructor(){
         this.items = [];
         this.count=0;
@@ -64,7 +64,7 @@ class stack {
 
 }
 
-const stack = new stack();
+const stack = new Stack();
 
 stack.isEmpty();
 
@@ -76,7 +76,7 @@ stack.peek();
 
 stack.push(300);
 
-console.log(myStack.print());
+console.log(stack.print());
 
 stack.pop();
 stack.pop();
