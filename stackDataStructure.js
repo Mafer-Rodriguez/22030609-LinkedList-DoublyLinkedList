@@ -1,67 +1,63 @@
-// Recuerda, en una pila el último en entrar es el primero en salir (LIFO)
+// Remember, in a stack, the last one to enter is the first one to leave (LIFO)
 class Stack {
     constructor(){
         this.items = [];
-        this.count=0;
+        this.count = 0;
     }
 
-    //Add element to top of stack
+    // Add element to top of stack
     push(element){
         this.items[this.count] = element;
-        //que elemento se agrego y en que posicion o cual es le valor actual del contador
+        // which element was added and at which position or what is the current value of the counter
         console.log(`${element} added to ${this.count}`);	// 100 added to 1
-        this.count += 1;//incrementa el contador, que esta ciendo rastreando la posicision del top del stack
-        return this.count -1 //retorna el valor actual del contador
+        this.count += 1; // increment the counter, which is tracking the position of the top of the stack
+        return this.count - 1; // return the current value of the counter
     }
 
-    //Return and remove top element in stack
-    //Return undefined if stack is empty
+    // Return and remove top element in stack
+    // Return undefined if stack is empty
     pop(){
         if(this.count == 0) return undefined;
-        let deletItem = this.items[this.count -1];//almacena el valor del top del stack
-        this.count -= 1;//decrementa el contador
-        console.log(`${deletItem} removed`); //esto es para saber que elemento se elimino
-        return deletItem;
+        let deletedItem = this.items[this.count - 1]; // store the value of the top of the stack
+        this.count -= 1; // decrement the counter
+        console.log(`${deletedItem} removed`); // this is to know which element was removed
+        return deletedItem;
     }
 
-    //Check top element in stack
+    // Check top element in stack
     peek(){
-        console.log(`Top element is ${this.items[this.count-1]}`);//esto es para saber que elemento esta en el top del stack y en que posicion
-        return this.items[this.count -1];
+        console.log(`Top element is ${this.items[this.count - 1]}`); // this is to know which element is at the top of the stack and at which position
+        return this.items[this.count - 1];
     }
 
-    //Check if stack is empty
+    // Check if stack is empty
     isEmpty(){
-        console.log(this.count == 0 ? 'Stack is empty' : 'Stack is NOT empty');//esto es para saber si el stack esta vacio o no
+        console.log(this.count == 0 ? 'Stack is empty' : 'Stack is NOT empty'); // this is to know if the stack is empty or not
         return this.count == 0;
     }
 
-    //Check size of stack
+    // Check size of stack
     size(){
-        console.log(`${this.count} elements in stack`);//esto es para saber cuantos elementos hay en el stack
+        console.log(`${this.count} elements in stack`); // this is to know how many elements are in the stack
         return this.count;
     }
 
-    //Print elements in stack
-
-    print (){
-        let str = ''
-        for (let i =0; i < this.count; i++){
-            str += this.items[i] + ' ';//esto es para imprimir todos los elementos del stack
+    // Print elements in stack
+    print(){
+        let str = '';
+        for (let i = 0; i < this.count; i++){
+            str += this.items[i] + ' '; // this is to print all the elements of the stack
         }
         return str;
     }
 
-    //Clear stack
+    // Clear stack
     clear(){
         this.items = [];
         this.count = 0;
-        console.log('stack cleared..');//esto es para saber si el stack esta vacio o no
+        console.log('stack cleared..'); // this is to know if the stack is empty or not
         return this.items;
     }
-
-
-
 }
 
 const stack = new Stack();
@@ -98,14 +94,12 @@ stack.push(300);
 
 console.log(stack.print());
 
-stack.pop()
-stack.pop()
-//console.log(stack.pop());
-//console.log(stack.pop());
+stack.pop();
+stack.pop();
 
 stack.clear();
 
 console.log(stack.print());
 stack.size();
 
-//stack.isEmpty();
+// stack.isEmpty();
