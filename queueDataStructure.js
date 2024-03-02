@@ -23,7 +23,31 @@ class Queue{
         return data;
      }
 
-     
+     //size of queue
+     getSize(){
+         return this.end - this.front;
+     }
+
+    //isEmpty
+    isEmpty(){
+        if (this.getSize() === 0 ){
+            return {isEmpty: true, message: "There is nothing in the queue"};
+        }else {
+            return {isEmpty: false, message: "There is something in the queue"};
+        }
+    }
+
+     //peek, saber el valor de la fila, sin sacarlo (ver el primer valor)
+     peek(){
+        if (this.getSize() === 0){
+            return (null, "There is nothing in the queue");
+        }
+        return this.items[this.front];//el primer valor que entro o que esta en este momento en la fila
+     }
+
+
+
+
 }
 
 
@@ -37,4 +61,7 @@ console.log(queue);
 //console.log(queue.dequeue());
 //console.log(queue.dequeue());
 //console.log(queue.dequeue());
-console.log(queue.dequeue());
+//console.log(queue.dequeue());
+console.log(queue.getSize());
+console.log(queue.isEmpty());
+console.log(queue.peek());
